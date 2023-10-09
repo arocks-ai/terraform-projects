@@ -31,19 +31,25 @@ $ terraform show plan-azure-vm-creation -no-color > plan-azure-vm-creation.txt
 $ terraform apply
 $ terraform apply plan-azure-vm-creation
 ```
-##### 1.1 View following output as per outputs.tf file.
+##### 1.1. View following output as per outputs.tf file.
 ```
 Resource Group Name
 Public IP of the VM
 Private key of the SSH key
 ```
-##### 1.2 Get private key of the VM created 
+
+#### 2. Get private key of the VM created 
 ```
 terraform output -raw tls_private_key > secureadmin_id_rsa
+```
+##### 2.1 Login to VM
+```
+chmod 400 secureadmin_id_rsa
 ssh -i secureadmin_id_rsa secureadmin@<public_ip_of_VM>
 exit  # exist from VM
 ```
-#### 2. Removing the created Resources
+
+#### 3. Removing the created Resources
 ```
 $ terraform plan -destroy
 $ terraform plan -destroy -out plan-azure-vm-destroy
