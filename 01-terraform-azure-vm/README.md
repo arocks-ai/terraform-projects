@@ -41,10 +41,10 @@ Private key of the SSH key
 #### 2. Get private key of the VM created 
 ```
 terraform output -raw tls_private_key > secureadmin_id_rsa
+chmod 400 secureadmin_id_rsa
 ```
 ##### 2.1 Login to VM
 ```
-chmod 400 secureadmin_id_rsa
 ssh -i secureadmin_id_rsa secureadmin@<public_ip_of_VM>
 exit  # exist from VM
 ```
