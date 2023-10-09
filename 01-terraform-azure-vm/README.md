@@ -26,7 +26,7 @@ $ terraform validate
 
 $ terraform plan
 $ terraform plan -out plan-azure-vm-creation
-$ terraform show azure-vm-creation -no-color > plan-azure-vm-creation.txt
+$ terraform show plan-azure-vm-creation -no-color > plan-azure-vm-creation.txt
 
 $ terraform apply
 $ terraform apply plan-azure-vm-creation
