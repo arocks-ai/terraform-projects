@@ -1,0 +1,4 @@
+public_ip_address = "172.190.2.135"
+resource_group_name = "terraform-azure-RG1"
+tls_private_key = <sensitive>
+
