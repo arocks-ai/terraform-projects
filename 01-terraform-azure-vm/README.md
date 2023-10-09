@@ -46,6 +46,8 @@ exit  # exist from VM
 #### 2. Removing the created Resources
 ```
 $ terraform plan -destroy
+$ terraform plan -destroy -out plan-azure-vm-destroy
+$ terraform show plan-azure-vm-destroy -no-color > plan-azure-vm-destroy.txt
+
 $ terraform destroy 
-$ terraform apply -destory 
 ```
