@@ -1,0 +1,219 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # azurerm_linux_virtual_machine.my_terraform_vm will be destroyed
+  - resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
+      - admin_username                  = "secureadmin" -> null
+      - allow_extension_operations      = true -> null
+      - computer_name                   = "terraform-azure-Standard" -> null
+      - disable_password_authentication = true -> null
+      - encryption_at_host_enabled      = false -> null
+      - extensions_time_budget          = "PT1H30M" -> null
+      - id                              = "/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1/providers/Microsoft.Compute/virtualMachines/terraform-azure-Standard" -> null
+      - location                        = "eastus" -> null
+      - max_bid_price                   = -1 -> null
+      - name                            = "terraform-azure-Standard" -> null
+      - network_interface_ids           = [
+          - "/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1/providers/Microsoft.Network/networkInterfaces/terraform-azure-NIC",
+        ] -> null
+      - platform_fault_domain           = -1 -> null
+      - priority                        = "Regular" -> null
+      - private_ip_address              = "10.0.1.4" -> null
+      - private_ip_addresses            = [
+          - "10.0.1.4",
+        ] -> null
+      - provision_vm_agent              = true -> null
+      - public_ip_address               = "172.190.2.135" -> null
+      - public_ip_addresses             = [
+          - "172.190.2.135",
+        ] -> null
+      - resource_group_name             = "terraform-azure-RG1" -> null
+      - size                            = "Standard_DS1_v2" -> null
+      - tags                            = {} -> null
+      - virtual_machine_id              = "a64c0a8d-ded4-4d36-89df-13dedba9788c" -> null
+
+      - admin_ssh_key {
+          - public_key = <<-EOT
+                ssh-rsa =
+            EOT -> null
+          - username   = "secureadmin" -> null
+        }
+
+      - os_disk {
+          - caching                   = "ReadWrite" -> null
+          - disk_size_gb              = 30 -> null
+          - name                      = "terraform-azure-vm-standard-OsDisk" -> null
+          - storage_account_type      = "Premium_LRS" -> null
+          - write_accelerator_enabled = false -> null
+        }
+
+      - source_image_reference {
+          - offer     = "UbuntuServer" -> null
+          - publisher = "Canonical" -> null
+          - sku       = "18.04-LTS" -> null
+          - version   = "latest" -> null
+        }
+    }
+
+  # azurerm_network_interface.my_terraform_nic will be destroyed
+  - resource "azurerm_network_interface" "my_terraform_nic" {
+      - applied_dns_servers           = [] -> null
+      - dns_servers                   = [] -> null
+      - enable_accelerated_networking = false -> null
+      - enable_ip_forwarding          = false -> null
+      - id                            = "/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1/providers/Microsoft.Network/networkInterfaces/terraform-azure-NIC" -> null
+      - internal_domain_name_suffix   = "zgb41id2haoerpxm5rf5r5e2ne.bx.internal.cloudapp.net" -> null
+      - location                      = "eastus" -> null
+      - mac_address                   = "60-45-BD-FE-03-7C" -> null
+      - name                          = "terraform-azure-NIC" -> null
+      - private_ip_address            = "10.0.1.4" -> null
+      - private_ip_addresses          = [
+          - "10.0.1.4",
+        ] -> null
+      - resource_group_name           = "terraform-azure-RG1" -> null
+      - tags                          = {} -> null
+      - virtual_machine_id            = "/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1/providers/Microsoft.Compute/virtualMachines/terraform-azure-Standard" -> null
+
+      - ip_configuration {
+          - name                          = "terraform-azure-NIC-configuration" -> null
+          - primary                       = true -> null
+          - private_ip_address            = "10.0.1.4" -> null
+          - private_ip_address_allocation = "Dynamic" -> null
+          - private_ip_address_version    = "IPv4" -> null
+          - public_ip_address_id          = "/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1/providers/Microsoft.Network/publicIPAddresses/terraform-azure-PublicIP" -> null
+          - subnet_id                     = "/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1/providers/Microsoft.Network/virtualNetworks/terraform-azure-vnet/subnets/terraform-azure-subnet" -> null
+        }
+    }
+
+  # azurerm_network_interface_security_group_association.my-nsg-assoc will be destroyed
+  - resource "azurerm_network_interface_security_group_association" "my-nsg-assoc" {
+      - id                        = "/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1/providers/Microsoft.Network/networkInterfaces/terraform-azure-NIC|/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1/providers/Microsoft.Network/networkSecurityGroups/terraform-azure-vnetSecurityGroup" -> null
+      - network_interface_id      = "/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1/providers/Microsoft.Network/networkInterfaces/terraform-azure-NIC" -> null
+      - network_security_group_id = "/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1/providers/Microsoft.Network/networkSecurityGroups/terraform-azure-vnetSecurityGroup" -> null
+    }
+
+  # azurerm_network_security_group.my_terraform_nsg will be destroyed
+  - resource "azurerm_network_security_group" "my_terraform_nsg" {
+      - id                  = "/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1/providers/Microsoft.Network/networkSecurityGroups/terraform-azure-vnetSecurityGroup" -> null
+      - location            = "eastus" -> null
+      - name                = "terraform-azure-vnetSecurityGroup" -> null
+      - resource_group_name = "terraform-azure-RG1" -> null
+      - security_rule       = [
+          - {
+              - access                                     = "Allow"
+              - description                                = ""
+              - destination_address_prefix                 = "*"
+              - destination_address_prefixes               = []
+              - destination_application_security_group_ids = []
+              - destination_port_range                     = "22"
+              - destination_port_ranges                    = []
+              - direction                                  = "Inbound"
+              - name                                       = "SSH"
+              - priority                                   = 200
+              - protocol                                   = "Tcp"
+              - source_address_prefix                      = "*"
+              - source_address_prefixes                    = []
+              - source_application_security_group_ids      = []
+              - source_port_range                          = "*"
+              - source_port_ranges                         = []
+            },
+        ] -> null
+      - tags                = {} -> null
+    }
+
+  # azurerm_public_ip.my_terraform_public_ip will be destroyed
+  - resource "azurerm_public_ip" "my_terraform_public_ip" {
+      - allocation_method       = "Dynamic" -> null
+      - availability_zone       = "No-Zone" -> null
+      - id                      = "/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1/providers/Microsoft.Network/publicIPAddresses/terraform-azure-PublicIP" -> null
+      - idle_timeout_in_minutes = 4 -> null
+      - ip_address              = "172.190.2.135" -> null
+      - ip_tags                 = {} -> null
+      - ip_version              = "IPv4" -> null
+      - location                = "eastus" -> null
+      - name                    = "terraform-azure-PublicIP" -> null
+      - resource_group_name     = "terraform-azure-RG1" -> null
+      - sku                     = "Basic" -> null
+      - sku_tier                = "Regional" -> null
+      - tags                    = {} -> null
+      - zones                   = [] -> null
+    }
+
+  # azurerm_resource_group.rg will be destroyed
+  - resource "azurerm_resource_group" "rg" {
+      - id       = "/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1" -> null
+      - location = "eastus" -> null
+      - name     = "terraform-azure-RG1" -> null
+      - tags     = {} -> null
+    }
+
+  # azurerm_subnet.my_terraform_subnet will be destroyed
+  - resource "azurerm_subnet" "my_terraform_subnet" {
+      - address_prefix                                 = "10.0.1.0/24" -> null
+      - address_prefixes                               = [
+          - "10.0.1.0/24",
+        ] -> null
+      - enforce_private_link_endpoint_network_policies = false -> null
+      - enforce_private_link_service_network_policies  = false -> null
+      - id                                             = "/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1/providers/Microsoft.Network/virtualNetworks/terraform-azure-vnet/subnets/terraform-azure-subnet" -> null
+      - name                                           = "terraform-azure-subnet" -> null
+      - resource_group_name                            = "terraform-azure-RG1" -> null
+      - service_endpoint_policy_ids                    = [] -> null
+      - service_endpoints                              = [] -> null
+      - virtual_network_name                           = "terraform-azure-vnet" -> null
+    }
+
+  # azurerm_virtual_network.my_terraform_network will be destroyed
+  - resource "azurerm_virtual_network" "my_terraform_network" {
+      - address_space         = [
+          - "10.0.0.0/16",
+        ] -> null
+      - dns_servers           = [] -> null
+      - guid                  = "a0ed83c9-387c-481c-beec-fc4bf8fc9c6c" -> null
+      - id                    = "/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1/providers/Microsoft.Network/virtualNetworks/terraform-azure-vnet" -> null
+      - location              = "eastus" -> null
+      - name                  = "terraform-azure-vnet" -> null
+      - resource_group_name   = "terraform-azure-RG1" -> null
+      - subnet                = [
+          - {
+              - address_prefix = "10.0.1.0/24"
+              - id             = "/subscriptions/<Todo-Sub-ID-HERE>f/resourceGroups/terraform-azure-RG1/providers/Microsoft.Network/virtualNetworks/terraform-azure-vnet/subnets/terraform-azure-subnet"
+              - name           = "terraform-azure-subnet"
+              - security_group = ""
+            },
+        ] -> null
+      - tags                  = {} -> null
+      - vm_protection_enabled = false -> null
+    }
+
+  # tls_private_key.secureadmin_ssh will be destroyed
+  - resource "tls_private_key" "secureadmin_ssh" {
+      - algorithm                     = "RSA" -> null
+      - ecdsa_curve                   = "P224" -> null
+      - id                            = "399154db2957a1b61b29c497e11e0a267b63f402" -> null
+      - private_key_openssh           = (sensitive value) -> null
+      - private_key_pem               = (sensitive value) -> null
+      - private_key_pem_pkcs8         = (sensitive value) -> null
+      - public_key_fingerprint_md5    = "e1:07:66:ef:a8:6f:7e:42:ff:fd:67:cf:14:4d:f8:a8" -> null
+      - public_key_fingerprint_sha256 = "SHA256:iQi8DAQD0DwWK7T8Cn91LkwFNeMGBXO1ghWgjmnTIhI" -> null
+      - public_key_openssh            = <<-EOT
+            ssh-rsa <KEY>
+        EOT -> null
+      - public_key_pem                = <<-EOT
+            -----BEGIN PUBLIC KEY-----
+            <KEY-HERE>
+            -----END PUBLIC KEY-----
+        EOT -> null
+      - rsa_bits                      = 4096 -> null
+    }
+
+Plan: 0 to add, 0 to change, 9 to destroy.
+
+Changes to Outputs:
+  - public_ip_address   = "172.190.2.135" -> null
+  - resource_group_name = "terraform-azure-RG1" -> null
+  - tls_private_key     = (sensitive value) -> null
