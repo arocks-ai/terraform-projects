@@ -1,2 +1,2 @@
-# terraform-projects
+## terraform-projects
 Sample Terraform projects
