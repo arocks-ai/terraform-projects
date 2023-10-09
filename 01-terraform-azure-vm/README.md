@@ -1,6 +1,7 @@
 ## create VMs in Azure with Terraform
 
 #### 0. view file structure
+Reference - https://medium.com/turknettech/how-to-create-vms-in-azure-with-terraform-32b85965a0af</br>
 $ tree  
 ```
 ├── main.tf
