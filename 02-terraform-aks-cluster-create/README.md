@@ -22,18 +22,23 @@ This terraform code will provision an AKS service on Azure like detailed below:
 
 ## File details
 
+* File structure 
+```bash
   ├── main.tf
   ├── outputs.tf
   ├── providers.tf
   ├── README.md
   ├── terraform.tfvars
   ├── variables.tf
+```
 
-* providers.tf - setup for azurerm provder
+* providers.tf 
+  - setup for azurerm provder
 * variables.tf  
   - Variables: agent count, admin username, cluster name, dns prefix of the cluster, resource group name, 
   - resource group location, ssh public key location and AKS service principal values.
-* outputs.tf  - kubeconfig file and other admin account related info used for kubernetes cluster.
+* outputs.tf  
+  - kubeconfig file and other admin account related info used for kubernetes cluster.
 * main.tf  
   - Main file. AKS configuration & Azure resource configurations details 
   - Creating cluster with “kubenet” CNI and node pool will consist of “Standard_D2_v2" VMs
