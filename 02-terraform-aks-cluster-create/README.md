@@ -24,15 +24,14 @@ This terraform code will provision an AKS service on Azure like detailed below:
 0. Configure Terrafrom to use Azure account
 Get details from SP creation output and assign to the following variables
 ```bash
-$vi .connection.env
+ $vi .connection.env
+  export ARM_CLIENT_ID="xxx" <appID>
+  export ARM_CLIENT_SECRET="xxx" <Password>
+  export ARM_SUBSCRIPTION_ID="xxx" <SubscriptionID>
+  export ARM_TENANT_ID="xxx" <TenantID>
 
-export ARM_CLIENT_ID="xxx" <appID>
-export ARM_CLIENT_SECRET="xxx" <Password>
-export ARM_SUBSCRIPTION_ID="xxx" <SubscriptionID>
-export ARM_TENANT_ID="xxx" <TenantID>
-
-$source .connection.env
-
+ $source .connection.env
+```
 1. Initialize terraform first
   ```bash
   terraform init
