@@ -46,7 +46,8 @@ This terraform code will provision an AKS service on Azure like detailed below:
 
 
 ## Usage
-0. Configure Terrafrom to use Azure account
+
+0.Configure Terrafrom to use Azure account
 Get details from SP creation output and assign to the following variables
 ```bash
  $vi .connection.env
@@ -57,7 +58,7 @@ Get details from SP creation output and assign to the following variables
 
  $source .connection.env
 ```
-1. Initialize terraform first
+1.Initialize terraform first
   ```bash
   terraform init
   ```
