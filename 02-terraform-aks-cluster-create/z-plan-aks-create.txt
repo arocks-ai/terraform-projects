@@ -61,7 +61,7 @@ Terraform will perform the following actions:
 
           + ssh_key {
               + key_data = <<-EOT
-                    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+cP4trkOgxN6RiI/aWfp++O+wDcpU9G5Rke9dz1BDLdMZ6RYPRBFvvz+SSsP9oXocXJ6KUqpca2CmESwyXo2rilQx23szxF8wTFqqWSSuranOTZnqAhYFrzqesN9emmaP9ggFTeBQwP59rnDU+pDeFatPjFH+pJnSTqx6i5eTxAHT/yj3NNYE6Mmwu1YglB8rcmWpYmI4C5NnYnghptCozVAgRd1MoweJmlHjuQFaYZLdNwoFmSpJTFvvMu/u4IOfED8CmLtVJB6wu0KWMkFm6k1Aji3pX3cMUoQxLro3YPAqty9alx3es7Y7QNgfcLjjYUcycml0Co0bAzLozllukz9OXQ7rMtlWkH/eUFka/hB/hRau5foo7+Ekxr+fNajzIxoxTF0KeoFMVKFlmuilr30TH92fcmNA2BpkbkaLS701Q7JMGHePFHCVK0mIT5UETAYq26/w894SkAqhtHmy/P9erUD7uiLN3rUXZC6MZtU49cDBYW42hnu1PVq04mQ4heJ1S/7rEK/MWrgz5Z8hbeM1vi4h3qIKjSc6GoxXCE3Dsy2c8kjIuobFfyS7uz/lsQUHFb1BDqpP0s/AcrDsMWC/PR5rIanARuodg95VV0pRYiFH2imHsgxqhXSbxv70UPTdsQwk6tc63Lc0KAUB7SuehKwY63qmdpDXcZdYiQ== ashok.shalini.a@gmail.com
+                    ssh-rsa KEY_INFO_HERE
                 EOT
             }
         }
