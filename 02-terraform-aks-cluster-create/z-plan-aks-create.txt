@@ -1,0 +1,107 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # azurerm_kubernetes_cluster.k8s will be created
+  + resource "azurerm_kubernetes_cluster" "k8s" {
+      + api_server_authorized_ip_ranges     = (known after apply)
+      + dns_prefix                          = "demok8s"
+      + fqdn                                = (known after apply)
+      + http_application_routing_zone_name  = (known after apply)
+      + id                                  = (known after apply)
+      + image_cleaner_enabled               = false
+      + image_cleaner_interval_hours        = 48
+      + kube_admin_config                   = (sensitive value)
+      + kube_admin_config_raw               = (sensitive value)
+      + kube_config                         = (sensitive value)
+      + kube_config_raw                     = (sensitive value)
+      + kubernetes_version                  = (known after apply)
+      + location                            = "eastus"
+      + name                                = "demok8s"
+      + node_resource_group                 = (known after apply)
+      + node_resource_group_id              = (known after apply)
+      + oidc_issuer_url                     = (known after apply)
+      + portal_fqdn                         = (known after apply)
+      + private_cluster_enabled             = false
+      + private_cluster_public_fqdn_enabled = false
+      + private_dns_zone_id                 = (known after apply)
+      + private_fqdn                        = (known after apply)
+      + public_network_access_enabled       = true
+      + resource_group_name                 = "demo-terraform-kubernetes-RG"
+      + role_based_access_control_enabled   = true
+      + run_command_enabled                 = true
+      + sku_tier                            = "Free"
+      + tags                                = {
+          + "Environment" = "Development"
+        }
+      + workload_identity_enabled           = false
+
+      + default_node_pool {
+          + kubelet_disk_type    = (known after apply)
+          + max_pods             = (known after apply)
+          + name                 = "agentpool"
+          + node_count           = 2
+          + node_labels          = (known after apply)
+          + orchestrator_version = (known after apply)
+          + os_disk_size_gb      = (known after apply)
+          + os_disk_type         = "Managed"
+          + os_sku               = (known after apply)
+          + scale_down_mode      = "Delete"
+          + type                 = "VirtualMachineScaleSets"
+          + ultra_ssd_enabled    = false
+          + vm_size              = "Standard_D2_v2"
+          + workload_runtime     = (known after apply)
+        }
+
+      + linux_profile {
+          + admin_username = "demo"
+
+          + ssh_key {
+              + key_data = <<-EOT
+                    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+cP4trkOgxN6RiI/aWfp++O+wDcpU9G5Rke9dz1BDLdMZ6RYPRBFvvz+SSsP9oXocXJ6KUqpca2CmESwyXo2rilQx23szxF8wTFqqWSSuranOTZnqAhYFrzqesN9emmaP9ggFTeBQwP59rnDU+pDeFatPjFH+pJnSTqx6i5eTxAHT/yj3NNYE6Mmwu1YglB8rcmWpYmI4C5NnYnghptCozVAgRd1MoweJmlHjuQFaYZLdNwoFmSpJTFvvMu/u4IOfED8CmLtVJB6wu0KWMkFm6k1Aji3pX3cMUoQxLro3YPAqty9alx3es7Y7QNgfcLjjYUcycml0Co0bAzLozllukz9OXQ7rMtlWkH/eUFka/hB/hRau5foo7+Ekxr+fNajzIxoxTF0KeoFMVKFlmuilr30TH92fcmNA2BpkbkaLS701Q7JMGHePFHCVK0mIT5UETAYq26/w894SkAqhtHmy/P9erUD7uiLN3rUXZC6MZtU49cDBYW42hnu1PVq04mQ4heJ1S/7rEK/MWrgz5Z8hbeM1vi4h3qIKjSc6GoxXCE3Dsy2c8kjIuobFfyS7uz/lsQUHFb1BDqpP0s/AcrDsMWC/PR5rIanARuodg95VV0pRYiFH2imHsgxqhXSbxv70UPTdsQwk6tc63Lc0KAUB7SuehKwY63qmdpDXcZdYiQ== ashok.shalini.a@gmail.com
+                EOT
+            }
+        }
+
+      + network_profile {
+          + dns_service_ip     = (known after apply)
+          + docker_bridge_cidr = (known after apply)
+          + ip_versions        = (known after apply)
+          + load_balancer_sku  = "standard"
+          + network_mode       = (known after apply)
+          + network_plugin     = "kubenet"
+          + network_policy     = (known after apply)
+          + outbound_type      = "loadBalancer"
+          + pod_cidr           = (known after apply)
+          + pod_cidrs          = (known after apply)
+          + service_cidr       = (known after apply)
+          + service_cidrs      = (known after apply)
+        }
+
+      + service_principal {
+          + client_id     = "$ARM_CLIENT_ID"
+          + client_secret = (sensitive value)
+        }
+    }
+
+  # azurerm_resource_group.rg will be created
+  + resource "azurerm_resource_group" "rg" {
+      + id       = (known after apply)
+      + location = "eastus"
+      + name     = "demo-terraform-kubernetes-RG"
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + client_certificate     = (sensitive value)
+  + client_key             = (sensitive value)
+  + cluster_ca_certificate = (sensitive value)
+  + cluster_password       = (sensitive value)
+  + cluster_username       = (sensitive value)
+  + host                   = (sensitive value)
+  + kube_config            = (sensitive value)
+  + resource_group_name    = "demo-terraform-kubernetes-RG"
